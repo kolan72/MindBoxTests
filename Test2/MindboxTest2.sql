@@ -1,5 +1,5 @@
-SELECT COUNT(T.[customerid]), S.[productid]
-FROM [dbo].[Sales]	S
+SELECT S.[productid],  COUNT(T.[customerid]) FirstSaleProdCount
+FROM [dbo].[Sales] S
 LEFT JOIN 
 	(SELECT 
 		  MIN([datetime]) minDT
